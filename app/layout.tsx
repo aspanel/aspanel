@@ -16,7 +16,7 @@ const RootLayout: FC<WrapperTypes> = ({ children }) => {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className='h-screen grid place-content-center'>
+        <div className='h-screen'>
           {children}
         </div>
       </body>

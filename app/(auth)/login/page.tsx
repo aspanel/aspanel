@@ -1,8 +1,14 @@
-import React from 'react'
+"use client"
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const LoginPage = () => {
+    const router = useRouter();
+    const onSubmit = () => {
+        router.push("/")
+    }
     return (
-        <form className="space-y-6" action="#" method="POST">
+        <form className="space-y-6" onSubmit={() => onSubmit()}>
             <div>
                 <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">Email address</label>
                 <div className="mt-2">
@@ -14,7 +20,7 @@ const LoginPage = () => {
                 <div className="flex items-center justify-between">
                     <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">Password</label>
                     <div className="text-sm">
-                        <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
+                        <Link href="/forgot-password" className="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</Link>
                     </div>
                 </div>
                 <div className="mt-2">
