@@ -1,6 +1,7 @@
 import { Plus } from "@/components/icons";
 import Image from "@/components/ui/Image";
 import { admin_dashboard_menus } from "@/utils/lists";
+import Link from 'next/link';
 
 
 export default function Home() {
@@ -16,15 +17,15 @@ export default function Home() {
       </div>
 
       <div className="flex-grow w-full md:w-[95%] lg:w-[85%] xl:w-[60%]  mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 sm:grid-rows-3 gap-10">
-        <button title="Deploy new website" className="col-span-1 bg-white shadow-xl rounded-xl grid place-content-center transition-all ease-linear duration-[.2s] uppercase hover:scale-[1.05]">
+        <Link href="/create-new" title="Deploy new website" className="col-span-1 bg-white shadow-xl rounded-xl grid place-content-center transition-all ease-linear duration-[.2s] uppercase hover:scale-[1.05]">
           <Plus className="w-[40px] h-[40px] text-[#6F67D8]" />
-        </button>
+        </Link>
         {
           admin_dashboard_menus.map((m, i) => {
             return (
-              <button type="button" key={i} title={m.title} className="col-span-1 bg-white shadow-xl rounded-xl grid place-content-center transition-all ease-linear duration-[.2s] uppercase hover:scale-[1.05]">
+              <Link href={m.href} key={i} title={m.title} className="col-span-1 bg-white shadow-xl rounded-xl grid place-content-center transition-all ease-linear duration-[.2s] uppercase hover:scale-[1.05]">
                 {m.label}
-              </button>
+              </Link>
             )
           })
         }
