@@ -1,2 +1,2 @@
-pub mod users_routes;
+pub mod user_routes;
 pub mod controllers;
