@@ -1,0 +1,4 @@
+[[command]]
+command = ["cargo", "run"]
+watch = ["src/**/*", "Cargo.toml"]
+restart_cmd = ["pkill", "-f", "target/debug/aspanel"]
